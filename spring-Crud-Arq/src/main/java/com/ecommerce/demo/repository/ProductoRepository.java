@@ -14,11 +14,11 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     List<Producto> findByNombreDelProducto(@Param("nombreDelProducto") String nombreDelProducto);
 
     /**
-	 * @deprecated Use {@link #findByNombreNativeQuery(String,long, long)} instead
+	 * @deprecated Use {@link #findByNombreDelProductoNativeQuery(String,long, long)} instead
 	 */
 	@Query(value = "SELECT * FROM productos WHERE nombreDelProducto = ?1", nativeQuery = true)
-	List<Producto> findByNombreNativeQuery(@Param("nombreDelProducto") String nombreDelProducto);
+	List<Producto> findByNombreDelProductoNativeQuery(@Param("nombreDelProducto") String nombreDelProducto);
 
-	@Query(value = "SELECT * FROM productos WHERE nombre = :nombre", nativeQuery = true)
-    List<Producto> findByNombreNativeQuery(@Param("nombreDelProducto") String nombreDelProducto, long numeroEan, long id);
+	@Query(value = "SELECT * FROM productos WHERE nombre = :nombreDelProducto", nativeQuery = true)
+    List<Producto> findByNombreDelProductoNativeQuery(@Param("nombreDelProducto") String nombreDelProducto, long numeroEan, long id);
 }
