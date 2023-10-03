@@ -45,11 +45,11 @@ public class Producto {
 		this.id = id;
 	}
 
-	public Long getcodigoEan() {
+	public Long getCodigoEan() {
 		return codigoEan;
 	}
 
-	public void setcodigoEan(Long codigoEan) {
+	public void setCodigoEan(Long codigoEan) {
 		
 		this.codigoEan = codigoEan;
 	}
